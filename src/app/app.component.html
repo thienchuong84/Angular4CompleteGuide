@@ -21,6 +21,24 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-default" (click)="onToggleDetails()">Display Details</button>
+      <p *ngIf="showSecret">Secret password = Tuna</p>
+      <!-- <div
+        *ngFor="let logItem of logs"
+        [ngStyle]="{backgroundColor: logItem >= 3 ? 'blue' : 'transparent'}"
+        [ngClass]="{'white-text': logItem >= 3}"
+      >{{ logItem }}</div>
+    </div> -->
+    <div
+    *ngFor="let logItem of logs; let i = index"
+    [ngStyle]="{backgroundColor: i >= 3 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': i >= 3}"
+  >{{ logItem }}</div>
+</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
         <h3>I'm in the AppComponent!</h3>
         <hr>
         <app-servers></app-servers>

@@ -1,3 +1,13 @@
 <!-- <p>Server with ID ___ is ___</p> -->
 <!-- <p>{{ 'Server' }} with ID {{ serverID }} is {{ serverStatus }}</p> -->
-<p>{{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }}</p>
+<!-- <p [ngStyle]="{'background-color': getColor()}">{{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }}</p> -->
+
+<!-- <p 
+  [ngStyle]="{backgroundColor: getColor()}">
+  {{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }}
+</p> -->
+<p 
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{onlineClass: serverStatus === 'online'}">
+  {{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }}
+</p>
